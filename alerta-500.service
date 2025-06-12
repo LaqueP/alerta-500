@@ -1,0 +1,14 @@
+# Crear en /etc/systemd/system/alerta-500.service
+[Unit]
+Description=Alertas HTTP 500 / PHP Fatal / Access denied (LiteSpeed-DirectAdmin)
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/alerta-500.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
